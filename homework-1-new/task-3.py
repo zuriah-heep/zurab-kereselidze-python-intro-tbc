@@ -13,4 +13,4 @@ if h > 0:
     print("The perimeter of the triangle is", p)
     print("The area of the triangle is", area)
 else:
-    print("A triangle with such sides does not exist.")
+    print("A triangle with such side lengths does not exist.")
