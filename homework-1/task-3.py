@@ -6,12 +6,11 @@ c = float(input("Enter side c length of a triangle: "))
 
 p = a + b + c
 s = p/2
+h = s * (s - a) * (s - b) * (s - c)
 
-if (s - a) * (s - b) * (s - c) > 0:
-    # Heron's formula
-    area = math.sqrt(s * (s - a) * (s - b) * (s - c))
-
+if h > 0:
+    area = math.sqrt(h)
     print("The perimeter of the triangle is", p)
     print("The area of the triangle is", area)
 else:
-    print("A triangle with such side lengths does not exist.")
+    print("A triangle with such sides does not exist.")
