@@ -1,4 +1,5 @@
-a = input("Enter your name: ")
-b = int(input("Enter your year of birth: "))
+name = input("Enter your name: ")
+year_of_birth = int(input("Enter your year of birth: "))
+age = 2024 - year_of_birth
 
-print("Hello", a + ',', "your age is", str(2024 - b) + '.')
+print("Hello", name + ',', "your age is", str(age) + '.')
