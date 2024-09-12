@@ -1,5 +1,5 @@
-a = input("Enter your first name: ")
-b = input("Enter your last name: ")
-c = input("Enter your age: ")
+first_name = input("Enter your first name: ")
+last_name = input("Enter your last name: ")
+age = input("Enter your age: ")
 
-print("Hello", a, b + ',', "your age is", c + '.')
+print("Hello", first_name, last_name + ',', "your age is", age + '.')
