@@ -25,7 +25,9 @@ elif bitcoin_price_current.empty:
 bitcoin_amount = money / bitcoin_price['Close'].iloc[0]
 profit = round(bitcoin_amount * bitcoin_price_current['Close'].iloc[0] - money, 2)
 
-if profit >= 0:
+if profit > 0:
     print('Your profit is', profit, 'USD')
-else:
+elif profit < 0:
     print('Your loss is', -profit, 'USD')
+else:
+    print('თხა იყიდე, თხა გაყიდე')
