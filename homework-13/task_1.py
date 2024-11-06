@@ -1,7 +1,7 @@
 def main():
     from random import randint
 
-    numbers = [str(randint(10, 1000000000)) for i in range (100)]
+    numbers = [str(randint(10, 1000000000)) for _ in range (100)]
     longest_number = max(numbers, key = len)
     shortest_number = min(numbers, key = len)
     numbers_ascending = [int(n) for n in sorted(numbers, key = len)]
