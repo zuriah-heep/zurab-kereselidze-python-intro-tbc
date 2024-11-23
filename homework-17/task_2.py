@@ -4,9 +4,8 @@ def is_path(graph, start, end, checked):
     checked.append(start)
     if start in graph:
         for new_start in graph[start]:
-            if new_start not in checked:
-                if is_path(graph, new_start, end, checked):
-                    return True
+            if new_start not in checked and is_path(graph, new_start, end, checked):
+                return True
     return False
 
 def main():
