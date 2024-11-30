@@ -42,4 +42,4 @@ except Exception as ex:
 print(avg_salary)
 
 with open('salary.json', 'w') as file:
-    json.dump(avg_salary, file, indent=2)
+    json.dump(avg_salary, file, indent = 2)
