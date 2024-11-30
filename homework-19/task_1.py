@@ -22,7 +22,7 @@ try:
                 except KeyError:
                     print("Missing 'salary' key in", key)
                 except (ValueError, TypeError) as er:
-                    print(f"{er}.", employee.get("name", "Unknown employee"), "salary is missing")
+                    print(f"Error: {er}.", employee.get("name", "Unknown employee"), "salary is missing")
 
             try:
                 avg_salary[department["name"]] = str(total / amount)
@@ -37,7 +37,7 @@ try:
 except FileNotFoundError:
     print(f"File '{file_name}' not found.")
 except Exception as ex:
-    print("Error: ", ex)
+    print("Error:", ex)
 
 print(avg_salary)
 
