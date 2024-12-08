@@ -45,6 +45,14 @@ class Department:
             positions[employee.position] = positions.get(employee.position, 0) + 1
         return positions
 
+    def print_department(self):
+        print()
+        print(self.name)
+        print('\tAverage salary:', self.average_salary())
+        print('\tHighest salary:', self.max_salary())
+        print('\tLowest salary:', self.min_salary())
+        print('\tPositions:', self.positions())
+
 
 def main():
     filename = 'homework_1.json'
@@ -63,12 +71,7 @@ def main():
                 employee_object =  Employee(employee['name'], employee['position'], employee['salary'])
                 departments[key].add_employee(employee_object)
 
-            print()
-            print(departments[key].name)
-            print('\tAverage salary:', departments[key].average_salary())
-            print('\tHighest salary:', departments[key].max_salary())
-            print('\tLowest salary:', departments[key].min_salary())
-            print('\tPositions:', departments[key].positions())
+            departments[key].print_department()
 
     except FileNotFoundError:
         print(f'File "{filename}" not found.')
@@ -90,12 +93,7 @@ def main():
     for employee in employees:
         departments['department_3'].add_employee(employee)
 
-    print()
-    print(departments['department_3'].name, 'after adding employees')
-    print('\tAverage salary:', departments['department_3'].average_salary())
-    print('\tHighest salary:', departments['department_3'].max_salary())
-    print('\tLowest salary:', departments['department_3'].min_salary())
-    print('\tPositions:', departments['department_3'].positions())
+    departments['department_3'].print_department()
 
 if __name__ == '__main__':
     main()
