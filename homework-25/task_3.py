@@ -1,4 +1,5 @@
 from datetime import datetime
+from time import sleep
 
 class TimestampMixin:
     def __init__(self):
@@ -10,6 +11,7 @@ class TimestampMixin:
 
     def get_modification_time(self):
         return self._modification_time
+
 
 class File(TimestampMixin):
     def __init__(self, name):
@@ -25,6 +27,7 @@ class File(TimestampMixin):
         self._name = new_name
         self._modification_time = datetime.now()
 
+
 class User(TimestampMixin):
     def __init__(self, name):
         super().__init__()
@@ -39,26 +42,31 @@ class User(TimestampMixin):
         self._name = new_name
         self._modification_time = datetime.now()
 
+
+# Example Usage
 def main():
-    file = File("name.txt")
-    print("Initial file name:", file.name)
+    file = File("file.txt")
+    print("\nCreated file", file.name)
     print("Creation time:", file.get_creation_time())
     print("Modification time:", file.get_modification_time())
 
-    file.name = "new_name.txt"
-    print("\nAfter renaming the file:")
-    print("Updated file name:", file.name)
+    sleep(1)
+    file.name = "new_file.txt"
+    print("\nModified file name:", file.name)
+    print("Creation time:", file.get_creation_time())
     print("Modification time:", file.get_modification_time())
 
-    user = User("user")
-    print("Initial file name:", user.name)
+    sleep(1)
+    user = User("zuriah-heep")
+    print("\nCreated user", user.name)
     print("Creation time:", user.get_creation_time())
     print("Modification time:", user.get_modification_time())
 
-    user.name = "new_user"
-    print("\nAfter renaming the file:")
-    print("Updated file name:", user.name)
+    sleep(1)
+    user.name = "zukaka"
+    print("\nModified user name:", user.name)
+    print("Creation time:", user.get_creation_time())
     print("Modification time:", user.get_modification_time())
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
